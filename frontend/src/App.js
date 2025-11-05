@@ -17,6 +17,9 @@ import Sidebar from './components/layout/Sidebar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Applications from './pages/Applications';
+import Companies from './pages/Companies';
+import Profile from './pages/Profile';
 
 // Create custom theme
 const theme = createTheme({
@@ -70,14 +73,12 @@ const AppContent = () => {
             {/* Redirect to dashboard by default */}
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
-            {/* Placeholder routes for future pages */}
+            {/* Protected Routes for Main Features */}
             <Route
               path="/applications"
               element={
                 <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>Applications (Coming Soon)</h1>
-                  </div>
+                  <Applications />
                 </ProtectedRoute>
               }
             />
@@ -85,18 +86,26 @@ const AppContent = () => {
               path="/companies"
               element={
                 <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>Companies (Coming Soon)</h1>
-                  </div>
+                  <Companies />
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Placeholder routes for future pages */}
             <Route
               path="/contacts"
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Contacts (Coming Soon)</h1>
+                    <h1>🤝 Contacts (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -106,7 +115,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Outreach (Coming Soon)</h1>
+                    <h1>📞 Outreach (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -116,7 +125,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>CV Matcher (Coming Soon)</h1>
+                    <h1>📄 CV Matcher (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -126,7 +135,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Goals (Coming Soon)</h1>
+                    <h1>🎯 Goals (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -136,7 +145,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Resources (Coming Soon)</h1>
+                    <h1>📚 Resources (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -146,7 +155,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Coaches (Coming Soon)</h1>
+                    <h1>👨‍🏫 Coaches (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -156,17 +165,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Notifications (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>Profile (Coming Soon)</h1>
+                    <h1>🔔 Notifications (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
@@ -176,7 +175,7 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <div style={{ padding: '20px' }}>
-                    <h1>Onboarding (Coming Soon)</h1>
+                    <h1>🚀 Onboarding (Coming Soon)</h1>
                   </div>
                 </ProtectedRoute>
               }
