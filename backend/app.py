@@ -16,6 +16,12 @@ from utils.error_handlers import register_error_handlers
 # Import routes
 from routes.auth import auth_bp
 from routes.profile import profile_bp
+from routes.onboarding import onboarding_bp
+from routes.companies import companies_bp
+from routes.contacts import contacts_bp
+from routes.applications import applications_bp
+from routes.goals import goals_bp
+from routes.notifications import notifications_bp
 
 
 def create_app():
@@ -47,6 +53,12 @@ def create_app():
     # Register blueprints
     app.register_blueprint(auth_bp)
     app.register_blueprint(profile_bp)
+    app.register_blueprint(onboarding_bp)
+    app.register_blueprint(companies_bp)
+    app.register_blueprint(contacts_bp)
+    app.register_blueprint(applications_bp)
+    app.register_blueprint(goals_bp)
+    app.register_blueprint(notifications_bp)
     
     # Create tables if they don't exist
     with app.app_context():
