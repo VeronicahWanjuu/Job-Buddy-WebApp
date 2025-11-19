@@ -87,7 +87,4 @@ const Sidebar = ({ open = true }) => {
   );
 };
 
-// Import Typography from MUI
-import { Typography } from '@mui/material';
-
 export default Sidebar;
