@@ -1,7 +1,6 @@
+from . import db
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from . import db
 
 class OnboardingData(db.Model):
     """
