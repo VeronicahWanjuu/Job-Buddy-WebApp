@@ -71,8 +71,8 @@ def create_app():
     app.register_blueprint(notifications_bp)
     
     # Create tables if they don't exist
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
     
     # Health check endpoint
     @app.route('/api/v1/health', methods=['GET'])
