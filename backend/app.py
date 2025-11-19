@@ -11,6 +11,16 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from config import get_config
 from models import db, migrate, init_db
+from models.user import User
+from models.onboarding import OnboardingData
+from models.company import Company
+from models.contact import Contact
+from models.application import Application
+from models.outreach import OutreachActivity
+from models.cv_analysis import CVAnalysis
+from models.goal import Goal
+from models.streak import Streak
+from models.notification import Notification
 from utils.error_handlers import register_error_handlers
 
 # Import routes
