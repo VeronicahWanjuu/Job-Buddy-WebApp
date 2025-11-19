@@ -119,6 +119,9 @@ def login():
         
         email = data.get('email', '').strip()
         password = data.get('password', '')
+
+        # Validate email
+        validate_email(email)
         
         # Find user by email
         user = User.query.filter_by(email=email).first()
