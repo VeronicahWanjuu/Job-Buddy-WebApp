@@ -14,6 +14,7 @@ import {
   ListItemText,
   Box,
   Divider,
+  Typography,
 } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
