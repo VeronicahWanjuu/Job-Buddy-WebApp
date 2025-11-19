@@ -155,7 +155,7 @@ def upgrade():
         sa.Column('message_template', sa.Text(), nullable=True),
         sa.Column('sent_date', sa.DateTime(), nullable=False),
         sa.Column('follow_up_date', sa.DateTime(), nullable=True),
-        sa.Column('status', sa.String(length=50), nullable=True, server_default=sa.text('Sent')),
+        sa.Column('status', sa.String(length=50), nullable=True, server_default=sa.text("'Sent'")),
         sa.Column('created_at', sa.DateTime(), nullable=False),
         sa.PrimaryKeyConstraint('id')
     )

@@ -14,8 +14,6 @@ import Navbar from './components/layout/Navbar';
 import Sidebar from './components/layout/Sidebar';
 
 // Import pages
-import Login from './pages/Login';
-import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Applications from './pages/Applications';
 import Companies from './pages/Companies';
@@ -56,130 +54,24 @@ const AppContent = () => {
         {isAuthenticated && <Navbar />}
         <Box sx={{ flex: 1, overflow: 'auto' }}>
           <Routes>
-            {/* Public Routes */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-
-            {/* Protected Routes */}
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-
-            {/* Redirect to dashboard by default */}
+            {/* Main Dashboard - No Authentication Required */}
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
-            {/* Protected Routes for Main Features */}
-            <Route
-              path="/applications"
-              element={
-                <ProtectedRoute>
-                  <Applications />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/companies"
-              element={
-                <ProtectedRoute>
-                  <Companies />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              }
-            />
+            {/* Main Features - No Authentication Required */}
+            <Route path="/applications" element={<Applications />} />
+            <Route path="/companies" element={<Companies />} />
+            <Route path="/profile" element={<Profile />} />
 
             {/* Placeholder routes for future pages */}
-            <Route
-              path="/contacts"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>🤝 Contacts (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/outreach"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>📞 Outreach (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/cv-matcher"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>📄 CV Matcher (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/goals"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>🎯 Goals (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/resources"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>📚 Resources (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/coaches"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>👨‍🏫 Coaches (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/notifications"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>🔔 Notifications (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/onboarding"
-              element={
-                <ProtectedRoute>
-                  <div style={{ padding: '20px' }}>
-                    <h1>🚀 Onboarding (Coming Soon)</h1>
-                  </div>
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/contacts" element={<div style={{ padding: '20px' }}><h1>🤝 Contacts (Coming Soon)</h1></div>} />
+            <Route path="/outreach" element={<div style={{ padding: '20px' }}><h1>📞 Outreach (Coming Soon)</h1></div>} />
+            <Route path="/cv-matcher" element={<div style={{ padding: '20px' }}><h1>📄 CV Matcher (Coming Soon)</h1></div>} />
+            <Route path="/goals" element={<div style={{ padding: '20px' }}><h1>🎯 Goals (Coming Soon)</h1></div>} />
+            <Route path="/resources" element={<div style={{ padding: '20px' }}><h1>📚 Resources (Coming Soon)</h1></div>} />
+            <Route path="/coaches" element={<div style={{ padding: '20px' }}><h1>👨‍🏫 Coaches (Coming Soon)</h1></div>} />
+            <Route path="/notifications" element={<div style={{ padding: '20px' }}><h1>🔔 Notifications (Coming Soon)</h1></div>} />
+            <Route path="/onboarding" element={<div style={{ padding: '20px' }}><h1>🚀 Onboarding (Coming Soon)</h1></div>} />
           </Routes>
         </Box>
       </Box>
